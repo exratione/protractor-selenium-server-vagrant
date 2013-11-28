@@ -3,7 +3,9 @@
 #
 
 run_list [
-  # Third party cookbooks.
+  # Third party cookbooks. Ensure that apt runs first to force an update,
+  # needed for Java to install correctly.
+  'recipe[apt]',
   'recipe[java]',
   'recipe[nodejs]',
   # Custom cookbooks, with dependencies specified.

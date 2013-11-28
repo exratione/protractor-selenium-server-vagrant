@@ -4,7 +4,11 @@
 
 default_attributes(
   'java' => {
-    'jdk_version' => '7'
+    'install_flavor' => 'oracle',
+    'jdk_version' => '7',
+    'oracle' => {
+      'accept_oracle_download_terms' => true
+    }
   },
   'nodejs' => {
     'install_method' => 'source',
