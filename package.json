@@ -1,0 +1,28 @@
+{
+  "name": "protractor-selenium-server-vagrant",
+  "description": "A Vagrant VM with Protractor, Selenium standalone server, and Xvfb for headless browser end to end testing of AngularJS applications.",
+  "keywords": [
+    "angular",
+    "protractor",
+    "selenium",
+    "vagrant",
+    "headless",
+    "testing"
+  ],
+  "version": "0.0.1",
+  "homepage": "https://github.com/exratione/protractor-selenium-server-vagrant",
+  "author": "Reason <reason@exratione.com>",
+  "engines": {
+    "node": ">= 0.10"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "repository" : {
+    "type": "git",
+    "url": "https://github.com/exratione/protractor-selenium-server-vagrant"
+  },
+  "licenses" : [{
+    "type": "MIT",
+    "url": "https://github.com/exratione/protractor-selenium-server-vagrant/raw/master/LICENSE"
+  }]
+}

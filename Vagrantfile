@@ -60,4 +60,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.add_role "protractor-selenium-server"
   end
 
+  # Add additional items needed to run the provided test case.
+  config.vm.provision :shell, :path => "test/provision-for-testing.sh"
+
 end

@@ -77,6 +77,24 @@ This will launch and provision your virtual machine. You can now set up and run
 Protractor tests in the server, using configuration scripts from your synced
 project directories.
 
+Testing the Protractor / Selenium Setup
+---------------------------------------
+
+A trivial test Express server, Jasmine test cases, and Protractor configuration
+are included under `/test`. To verify that the Vagrant VM setup is correct and
+functional, log in via SSH and run the Protractor test.
+
+```
+cd /path/to/protractor-selenium-server-vagrant
+vagrant ssh
+cd /vagrant/test
+protractor protractor.conf.js
+```
+
+The Protractor configuration file launches the Express server before the tests
+run and then shuts it down afterwards. This is neither a common nor recommended
+approach to end to end testing, but it is helpful here.
+
 [0]: https://github.com/angular/protractor
 [1]: http://downloads.vagrantup.com
 [2]: https://www.virtualbox.org/wiki/Downloads
