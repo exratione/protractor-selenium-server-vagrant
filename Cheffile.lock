@@ -23,8 +23,10 @@ GIT
   specs:
     chef_update (0.0.1)
 
-PATH
-  remote: ../protractor-selenium-server-cookbook
+GIT
+  remote: https://github.com/exratione/protractor-selenium-server-cookbook
+  ref: v0.0.1
+  sha: 17ecb3cfdea1beed7b81e82acdfb77b1bf4c8a3b
   specs:
     protractor-selenium-server (0.0.1)
       java (>= 0.0.0)
