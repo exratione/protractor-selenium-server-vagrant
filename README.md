@@ -101,7 +101,7 @@ Current Functional Status
 -------------------------
 
   * Chromium: works fine.
-  * Firefox: hangs indefinitely.
+  * Firefox: works fine.
   * PhantomJS: fails on [a known issue][3].
 
 [0]: https://github.com/angular/protractor
