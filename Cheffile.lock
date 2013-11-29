@@ -25,10 +25,10 @@ GIT
 
 GIT
   remote: https://github.com/exratione/protractor-selenium-server-cookbook
-  ref: v0.0.1
-  sha: 17ecb3cfdea1beed7b81e82acdfb77b1bf4c8a3b
+  ref: v0.0.2
+  sha: 10b050da974577c88ed800035defed3a3d3f0778
   specs:
-    protractor-selenium-server (0.0.1)
+    protractor-selenium-server (0.0.2)
       java (>= 0.0.0)
       nodejs (>= 0.0.0)
 

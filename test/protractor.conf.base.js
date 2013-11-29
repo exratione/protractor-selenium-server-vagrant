@@ -26,6 +26,12 @@ exports.config = {
   // The selenium standalone server will listen on this port. If null it will
   // choose an unused port.
   seleniumPort: null,
+  // The chromeDriver property may or may not be needed depending on the PATH
+  // when Protractor runs, but better safe than sorry.
+  //
+  // It is passed to the Selenium standalone server as the system property
+  // webdriver.chrome.driver when it launches.
+  chromeDriver: '/usr/local/bin/chromedriver',
   // Additional command line options to pass to Selenium.
   seleniumArgs: [
     // See: http://stackoverflow.com/questions/14058111/selenium-server-doesnt-bind-to-socket-after-being-killed-with-sigterm
@@ -40,6 +46,9 @@ exports.config = {
   // -----------------------------------------------------------------
 
   // The address of an existing selenium server that Protractor will use.
+  //
+  // Note that this server must have chromedriver in its path for Chromium
+  // tests to work.
   seleniumAddress: 'http://localhost:4444/wd/hub',
 
   // -----------------------------------------------------------------
@@ -85,17 +94,13 @@ exports.config = {
   // Browser and Capabilities: Chrome
   // -----------------------------------------------------------------
 
-  // The chromeDriver property may or may not be needed depending on the PATH
-  // when Protractor runs, but better safe than sorry.
-  //
-  // It is passed to the Selenium standalone server as the system property
-  // webdriver.chrome.driver.
-  chromeDriver: '/usr/local/bin/chromedriver',
+  /*
   capabilities: {
     browserName: 'chrome',
     version: '',
     platform: 'ANY'
   },
+  */
 
   // -----------------------------------------------------------------
   // Browser and Capabilities: Firefox
@@ -124,6 +129,10 @@ exports.config = {
   // -----------------------------------------------------------------
   // Other configuration.
   // -----------------------------------------------------------------
+
+  // The timeout for each script run on the browser. This should be longer
+  // than the maximum time your application needs to stabilize between tasks.
+  allScriptsTimeout: 11000,
 
   /**
    * A callback function called once protractor is ready and available,

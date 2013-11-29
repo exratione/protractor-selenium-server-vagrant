@@ -12,5 +12,5 @@ cookbook 'chef_update',
 # also be downloaded by librarian-chef.
 cookbook 'protractor-selenium-server',
   :git => 'https://github.com/exratione/protractor-selenium-server-cookbook',
-  :ref => 'v0.0.1'
+  :ref => 'v0.0.2'
 

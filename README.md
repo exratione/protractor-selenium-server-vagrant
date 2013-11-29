@@ -82,19 +82,29 @@ Testing the Protractor / Selenium Setup
 
 A trivial test Express server, Jasmine test cases, and Protractor configuration
 are included under `/test`. To verify that the Vagrant VM setup is correct and
-functional, log in via SSH and run the Protractor test.
+functional, log in via SSH and run the Protractor tests for various browsers.
 
 ```
 cd /path/to/protractor-selenium-server-vagrant
 vagrant ssh
 cd /vagrant/test
-protractor protractor.conf.js
+protractor protractor.conf.chromium.js
+protractor protractor.conf.firefox.js
+protractor protractor.conf.phantomjs.js
 ```
 
 The Protractor configuration file launches the Express server before the tests
 run and then shuts it down afterwards. This is neither a common nor recommended
 approach to end to end testing, but it is helpful here.
 
+Current Functional Status
+-------------------------
+
+  * Chromium: works fine.
+  * Firefox: hangs indefinitely.
+  * PhantomJS: fails on [a known issue][3].
+
 [0]: https://github.com/angular/protractor
 [1]: http://downloads.vagrantup.com
 [2]: https://www.virtualbox.org/wiki/Downloads
+[3]: https://github.com/angular/protractor/issues/85

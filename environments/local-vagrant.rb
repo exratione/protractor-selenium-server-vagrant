@@ -21,7 +21,7 @@ default_attributes(
       'version' => '2.37.0'
     },
     'xvfb' => {
-      'display' => '0'
+      'display' => '10'
     }
   }
 )
