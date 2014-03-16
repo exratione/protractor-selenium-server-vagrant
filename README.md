@@ -73,9 +73,9 @@ librarian-chef install
 vagrant up
 ```
 
-This will launch and provision your virtual machine. You can now set up and run
-Protractor tests in the server, using configuration scripts from your synced
-project directories.
+This will launch and provision your virtual machine. Note that installing the
+Oracle JDK can take a while. Once done you can set up and run Protractor tests
+in the server, using configuration scripts from your synced project directories.
 
 Testing the Protractor / Selenium Setup
 ---------------------------------------
@@ -97,6 +97,21 @@ The Protractor configuration file launches the Express server before the tests
 run and then shuts it down afterwards. This is neither a common nor recommended
 approach to end to end testing, but it is helpful here.
 
+Notes on Provisioning
+---------------------
+
+The provisioning uses a mix of shell scripts and cookbooks that are largely
+Debian-distro specific. Some work would be needed in order to make this all work
+with an rpm-based distro, but the easiest approach is to start the provisioning
+process by using Chef to install the `apt` cookbook - after which the rest of it
+should just work.
+
+The `protractor-selenium-server` cookbook depends on the `nodejs` cookbook, but
+that cookbook is not presently used. It cannot install a binary distribution
+of Node.js, so instead [n][3] and `provisioning-scripts/install-n-and-nodejs.sh`
+are used for that task.
+
 [0]: https://github.com/angular/protractor
 [1]: http://downloads.vagrantup.com
 [2]: https://www.virtualbox.org/wiki/Downloads
+[3]: https://github.com/visionmedia/n

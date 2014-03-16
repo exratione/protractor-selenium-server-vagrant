@@ -39,6 +39,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Install Node.js via binaries, using the n tool.
   config.vm.provision :shell, :path => "provisioning-scripts/install-n-and-nodejs.sh"
 
+  # Add additional items needed to run the provided test case.
+  config.vm.provision :shell, :path => "provisioning-scripts/provision-for-testing.sh"
+
   # Enable provisioning with chef solo, specifying a cookbooks path, roles
   # path, and data_bags path (all relative to this Vagrantfile), and adding
   # some recipes and/or roles.
@@ -49,8 +52,4 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.environment = "local-vagrant"
     chef.add_role "protractor-selenium-server"
   end
-
-  # Add additional items needed to run the provided test case.
-  config.vm.provision :shell, :path => "test/provision-for-testing.sh"
-
 end

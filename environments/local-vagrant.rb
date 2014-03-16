@@ -10,10 +10,6 @@ default_attributes(
       'accept_oracle_download_terms' => true
     }
   },
-  'nodejs' => {
-    'install_method' => 'binary',
-    'version' => '0.10.25'
-  },
   'protractor-selenium-server' => {
     'selenium' => {
       'install-dir' => '/usr/local/share/selenium',

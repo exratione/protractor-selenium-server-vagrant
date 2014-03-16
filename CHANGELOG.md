@@ -1,6 +1,11 @@
 Changelog
 =========
 
+v0.0.5
+------
+
+  * Tidy up some configuration and provisioning file locations.
+
 v0.0.4
 ------
 
