@@ -11,14 +11,14 @@ default_attributes(
     }
   },
   'nodejs' => {
-    'install_method' => 'source',
-    'version' => '0.10.22'
+    'install_method' => 'binary',
+    'version' => '0.10.25'
   },
   'protractor-selenium-server' => {
     'selenium' => {
       'install-dir' => '/usr/local/share/selenium',
       'log-dir' => '/var/log/selenium',
-      'version' => '2.37.0'
+      'version' => '2.40.0'
     },
     'xvfb' => {
       'display' => '10'

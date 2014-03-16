@@ -97,14 +97,6 @@ The Protractor configuration file launches the Express server before the tests
 run and then shuts it down afterwards. This is neither a common nor recommended
 approach to end to end testing, but it is helpful here.
 
-Current Functional Status
--------------------------
-
-  * Chromium: works fine.
-  * Firefox: works fine.
-  * PhantomJS: fails on [a known issue][3].
-
 [0]: https://github.com/angular/protractor
 [1]: http://downloads.vagrantup.com
 [2]: https://www.virtualbox.org/wiki/Downloads
-[3]: https://github.com/angular/protractor/issues/85

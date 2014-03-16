@@ -34,20 +34,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Run an initial provisioning block that just updates the version of the
   # Chef client on the machine. We have to get up past 11.6.0 to support
   # environments with chef-solo.
-  config.vm.provision :chef_solo do |chef|
-    chef.cookbooks_path = "./cookbooks"
-    chef.run_list = [
-      "recipe[chef_update]"
-    ]
-    chef.json = {
-      "chef_update" => {
-        "minimum_version" => {
-          "major" => 11,
-          "minor" => 6
-        }
-      }
-    }
-  end
+  config.vm.provision :shell, :path => "provisioning-scripts/chef-update.sh"
+
+  # Install Node.js via binaries, using the n tool.
+  config.vm.provision :shell, :path => "provisioning-scripts/install-n-and-nodejs.sh"
 
   # Enable provisioning with chef solo, specifying a cookbooks path, roles
   # path, and data_bags path (all relative to this Vagrantfile), and adding

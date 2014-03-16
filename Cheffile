@@ -3,14 +3,9 @@
 
 site 'http://community.opscode.com/api/v1'
 
-# Used to update the version of the Chef client on the VM.
-cookbook 'chef_update',
-  :git => 'https://github.com/exratione/chef_update',
-  :ref => 'v0.0.1'
-
 # Custom cookbooks within this project. These specify dependencies that will
 # also be downloaded by librarian-chef.
 cookbook 'protractor-selenium-server',
   :git => 'https://github.com/exratione/protractor-selenium-server-cookbook',
-  :ref => 'v0.0.3'
+  :ref => 'v0.0.4'
 

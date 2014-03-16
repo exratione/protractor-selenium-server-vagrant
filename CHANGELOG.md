@@ -1,6 +1,14 @@
 Changelog
 =========
 
+v0.0.4
+------
+
+  * Ditch the chef_update cookbook in favor of a shell script update of Chef.
+  * Switch to binary installation of Node.js via n rather than the Node.js cookbook.
+  * Update to v0.0.4 of protractor-selenium-server cookbook.
+  * Documentation update to note that PhantomJS works with Protractor.
+
 v0.0.3
 ------
 

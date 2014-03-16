@@ -3,11 +3,9 @@
 #
 
 run_list [
-  # Third party cookbooks. Ensure that apt runs first to force an update.
-  'recipe[apt]',
+  # Third party cookbooks.
   'recipe[java]',
-  'recipe[nodejs]',
-  # Custom cookbooks, with dependencies specified.
+  # Custom cookbooks.
   'recipe[protractor-selenium-server]',
   'recipe[protractor-selenium-server::services]',
 ]
