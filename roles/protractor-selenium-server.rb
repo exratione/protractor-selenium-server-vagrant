@@ -4,12 +4,14 @@
 
 run_list [
   # Third party cookbooks.
+  # Put apt up front so as to ensure that "apt-get update" happens. This is
+  # necessary as the version of Ubuntu we're using is a little outdated.
+  'recipe[apt]',
+  'recipe[build-essential]',
   'recipe[java]',
   # Custom cookbooks.
-  #
-  # Note that protractor-selenium-server depends on the nodejs cookbook, but
-  # we are installing Node.js via shell scripts instead. So that cookbook will
-  # be installed by librarian-chef but never used.
+  'recipe[curl]',
+  'recipe[n-and-nodejs]',
   'recipe[protractor-selenium-server]',
   'recipe[protractor-selenium-server::services]',
 ]

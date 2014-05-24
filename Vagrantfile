@@ -5,10 +5,17 @@
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  # Every Vagrant virtual environment requires a box to build off of. Here we're
+  # Every Vagrant virtual environment requires a box to build on. Here we're
   # using 64-bit Ubuntu 12.04 LTS.
   config.vm.box = "precise64"
   config.vm.box_url = "http://files.vagrantup.com/precise64.box"
+
+  # It would be pleasant to be able to use Ubuntu 14.04 instead, but as of
+  # Q2 2014 there is a blocking issue in the interaction between libGL and
+  # Chromium on Ubuntu 14.04 that prevents Chromium running under Xvfb. This
+  # issue is not present on Ubuntu 12.04.
+  # config.vm.box = "trusty64"
+  # config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box"
 
   # Share an additional folder to the guest VM. The first argument is
   # the path on the host to the actual folder. The second argument is
@@ -31,16 +38,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vb.customize ["modifyvm", :id, "--memory", "2048"]
   end
 
-  # Run an initial provisioning block that just updates the version of the
-  # Chef client on the machine. We have to get up past 11.6.0 to support
-  # environments with chef-solo.
-  config.vm.provision :shell, :path => "provisioning-scripts/chef-update.sh"
-
-  # Install Node.js via binaries, using the n tool.
-  config.vm.provision :shell, :path => "provisioning-scripts/install-n-and-nodejs.sh"
-
-  # Add additional items needed to run the provided test case.
-  config.vm.provision :shell, :path => "provisioning-scripts/provision-for-testing.sh"
+  # Run an initial provisioning block that installs or updates the Chef client
+  # on the machine. We have to get up past 11.6.0 to support environments with
+  # chef-solo.
+  #
+  # For this to work you must have installed the vagrant-omnibus plugin via:
+  # vagrant plugin install vagrant-omnibus
+  config.omnibus.chef_version = :latest
 
   # Enable provisioning with chef solo, specifying a cookbooks path, roles
   # path, and data_bags path (all relative to this Vagrantfile), and adding

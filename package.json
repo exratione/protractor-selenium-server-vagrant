@@ -9,7 +9,7 @@
     "headless",
     "testing"
   ],
-  "version": "0.0.5",
+  "version": "0.0.6",
   "homepage": "https://github.com/exratione/protractor-selenium-server-vagrant",
   "author": "Reason <reason@exratione.com>",
   "engines": {

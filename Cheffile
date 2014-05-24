@@ -3,9 +3,16 @@
 
 site 'http://community.opscode.com/api/v1'
 
+# Not a dependency, but rather only used to force a call to "apt-get update" at
+# the outset of provisioning.
+cookbook 'apt'
+
 # Custom cookbooks within this project. These specify dependencies that will
 # also be downloaded by librarian-chef.
+cookbook 'n-and-nodejs',
+  :git => 'https://github.com/exratione/n-and-nodejs-cookbook',
+  :ref => 'v0.0.2'
+
 cookbook 'protractor-selenium-server',
   :git => 'https://github.com/exratione/protractor-selenium-server-cookbook',
-  :ref => 'v0.0.4'
-
+  :ref => 'v0.0.5'

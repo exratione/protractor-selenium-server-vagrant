@@ -10,3 +10,6 @@ tmp
 .settings
 .project
 *sublime-*
+
+# TODO lists.
+TODO*
