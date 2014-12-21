@@ -25,7 +25,7 @@ default_attributes(
     'selenium' => {
       'install-dir' => '/usr/local/share/selenium',
       'log-dir' => '/var/log/selenium',
-      'version' => '2.41.0',
+      'version' => '2.44.0',
     },
     'xvfb' => {
       'display' => '10',

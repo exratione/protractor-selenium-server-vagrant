@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.0.7
+
+  * Update to v0.0.6 of protractor-selenium-server cookbook.
+
 ## v0.0.6
 
   * Remove shell script provisioning in favor of cookbooks and Vagrant plugins.

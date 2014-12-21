@@ -55,10 +55,10 @@ vagrant plugin install vagrant-omnibus
 
 [Librarian-chef][4] is a tool for managing your cookbooks, and will fetch them
 based on the contents of the Cheffile in the project directory. To install on
-Ubuntu 14.04 run the following commands:
+Ubuntu 14.04 you will have to first update to Ruby 2.*, such by using [RVM][5],
+and then:
 
 ```
-sudo apt-get install ruby1.9.1-dev
 sudo gem install chef librarian-chef
 ```
 
@@ -71,8 +71,8 @@ Vagrantfile to create synced folders that include the relevant Protractor
 configuration files. E.g.:
 
 ```
-  config.vm.synced_folder "/my-workspace/project", "/project"
-  config.vm.synced_folder "/my-workspace", "/workspace"
+config.vm.synced_folder "/my-workspace/project", "/project"
+config.vm.synced_folder "/my-workspace", "/workspace"
 ```
 
 A running instance of the AngularJS application is also needed, but this can be
@@ -138,3 +138,4 @@ not present in Ubuntu 12.04.
 [2]: https://www.virtualbox.org/wiki/Downloads
 [3]: https://github.com/schisamo/vagrant-omnibus
 [4]: https://github.com/applicationsonline/librarian-chef
+[5]: https://rvm.io
