@@ -5,17 +5,9 @@
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  # Every Vagrant virtual environment requires a box to build on. Here we're
-  # using 64-bit Ubuntu 12.04 LTS.
-  config.vm.box = "precise64"
-  config.vm.box_url = "http://files.vagrantup.com/precise64.box"
-
-  # It would be pleasant to be able to use Ubuntu 14.04 instead, but as of
-  # Q2 2014 there is a blocking issue in the interaction between libGL and
-  # Chromium on Ubuntu 14.04 that prevents Chromium running under Xvfb. This
-  # issue is not present on Ubuntu 12.04.
-  # config.vm.box = "trusty64"
-  # config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box"
+  # Using Ubuntu 14.04 LTS.
+  config.vm.box = "trusty64"
+  config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box"
 
   # Share an additional folder to the guest VM. The first argument is
   # the path on the host to the actual folder. The second argument is
@@ -34,7 +26,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant.
   config.vm.provider :virtualbox do |vb|
-    # Use VBoxManage to customize the VM. For example to change memory:
+    # Use VBoxManage to customize the VM. For example to change memory do this.
+    # You'll want at least this much to be certain of running the basic tests
+    # included in this package. More will be needed for more complex or
+    # concurrent testing.
     vb.customize ["modifyvm", :id, "--memory", "2048"]
   end
 

@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.0.8
+
+  * Update to Ubuntu 14.04 since the number of blocking issues seem to be about the same, just different.
+  * Update to v0.0.7 of protractor-selenium-server cookbook.
+
 ## v0.0.7
 
   * Update to v0.0.6 of protractor-selenium-server cookbook.

@@ -1,6 +1,6 @@
 # A Vagrant VM For Protractor End to End Tests
 
-Vagrant and Chef are here used to launch and provision an Ubuntu 12.04 virtual
+Vagrant and Chef are here used to launch and provision an Ubuntu 14.04 virtual
 machine for the purpose of running headless browser end to end tests against
 AngularJS web applications using [Protractor][0], a test tool that works with
 the established Selenium and WebDriver ecosystem framework.
@@ -116,11 +116,13 @@ protractor protractor.conf.firefox.js
 protractor protractor.conf.phantomjs.js
 ```
 
-The test Protractor configuration files launch the Express server before tests
-run and then shut it down afterwards. This is neither a common nor recommended
-approach to end to end testing, but it is helpful here.
+These Protractor configuration files launch the Express server before tests
+run and then shut it down afterwards. This is neither common nor recommended
+as an approach to end to end testing, but it is helpful here.
 
 ## Notes
+
+### Provisioning is Slow
 
 Bringing up a new server is a lengthy provisioning process. Many packages are
 required to install Chromium and Firefox on a headless server, and this can take
@@ -128,10 +130,27 @@ quite the long time. This is not well suited to creating servers on demand: you
 are better off provisioning once, creating an image, and then instantiating new
 VMs from that image.
 
-Ubuntu 12.04 is presently used as the VM OS because as of Q2 2014 there is a
-blocking issue in the interaction between the libGL library and Chromium that
-prevents the use of Chromium headless with Xvfb in Ubuntu 14.04. This issue is
-not present in Ubuntu 12.04.
+### The Latest Packages Usually Have Issues
+
+Since late 2013 it has frequently been the case that at least one of Chromium,
+Firefox, or PhantomJS does not function in this setup when using the latest
+stable versions of every package from the default Ubuntu and NPM repositories.
+
+For example, in Q2 2014 there was a blocking issue in the interaction between
+the libGL library and Chromium in Ubuntu 14.04. As of Q1 2015 for Ubuntu 14.04
+there is (a) a [blocking issue][6] in the interaction between current latest
+release versions of Protractor and PhantomJS, (b) [another blocking issue][7] in
+the interaction between Selenium 2.44.0 and Firefox 35.0. You are not even safe
+to back down to Ubuntu 12.04 where things have been more stable, as there
+versions of Chromedriver and Chromium have slipped out of sync with one another
+as of Q1 2015.
+
+The provisioning used here installs the latest generally available releases for
+all items of interest exception for Selenium, where the version must be
+specified. Depending on the situation at the time of use, you may want to either
+update to versions yet to make it into the general repositories, or downgrade
+selectively. The best approach to take depends on the details of the issue at
+the time, so there is little advice to be given, unfortunately.
 
 [0]: https://github.com/angular/protractor
 [1]: http://downloads.vagrantup.com
@@ -139,3 +158,5 @@ not present in Ubuntu 12.04.
 [3]: https://github.com/schisamo/vagrant-omnibus
 [4]: https://github.com/applicationsonline/librarian-chef
 [5]: https://rvm.io
+[6]: https://github.com/angular/protractor/issues/1512
+[7]: https://code.google.com/p/selenium/issues/detail?id=8390
