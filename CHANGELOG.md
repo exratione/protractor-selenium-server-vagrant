@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.0.9
+
+  * Update default Selenium version to 2.45.0.
+  * Update example configuration to specify the rootElement correctly.
+
 ## v0.0.8
 
   * Update to Ubuntu 14.04 since the number of blocking issues seem to be about the same, just different.

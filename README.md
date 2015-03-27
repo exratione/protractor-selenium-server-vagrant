@@ -137,13 +137,13 @@ Firefox, or PhantomJS does not function in this setup when using the latest
 stable versions of every package from the default Ubuntu and NPM repositories.
 
 For example, in Q2 2014 there was a blocking issue in the interaction between
-the libGL library and Chromium in Ubuntu 14.04. As of Q1 2015 for Ubuntu 14.04
-there is (a) a [blocking issue][6] in the interaction between current latest
-release versions of Protractor and PhantomJS, (b) [another blocking issue][7] in
+the libGL library and Chromium in Ubuntu 14.04. In Q1 2015 for Ubuntu 14.04
+there was a [blocking issue][6] in the interaction between current latest
+release versions of Protractor and PhantomJS, and [another blocking issue][7] in
 the interaction between Selenium 2.44.0 and Firefox 35.0. You are not even safe
-to back down to Ubuntu 12.04 where things have been more stable, as there
-versions of Chromedriver and Chromium have slipped out of sync with one another
-as of Q1 2015.
+to back down to Ubuntu 12.04 where things have been more stable in the past, as
+there versions of Chromedriver and Chromium slipped out of sync with one another
+in Q1 2015.
 
 The provisioning used here installs the latest generally available releases for
 all items of interest exception for Selenium, where the version must be
