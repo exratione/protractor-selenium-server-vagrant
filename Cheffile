@@ -11,7 +11,7 @@ cookbook 'apt'
 # also be downloaded by librarian-chef.
 cookbook 'n-and-nodejs',
   :git => 'https://github.com/exratione/n-and-nodejs-cookbook',
-  :ref => 'v0.0.2'
+  :ref => 'v0.0.3'
 
 cookbook 'protractor-selenium-server',
   :git => 'https://github.com/exratione/protractor-selenium-server-cookbook',

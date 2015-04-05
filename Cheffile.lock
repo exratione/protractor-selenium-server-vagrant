@@ -8,10 +8,10 @@ SITE
 
 GIT
   remote: https://github.com/exratione/n-and-nodejs-cookbook
-  ref: v0.0.2
-  sha: 5419ddc5739fc90bcac7ed53304b40be4e8b640c
+  ref: v0.0.3
+  sha: 22e4e784d125af3285f95f1c9ec57fdd7d8bd8cc
   specs:
-    n-and-nodejs (0.0.2)
+    n-and-nodejs (0.0.3)
       build-essential (>= 0.0.0)
       curl (>= 0.0.0)
 

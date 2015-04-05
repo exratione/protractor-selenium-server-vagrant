@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.0.10
+
+  * Update n-and-nodejs to 0.0.3.
+  * Update default n version to 1.2.13.
+
 ## v0.0.9
 
   * Update default Selenium version to 2.45.0.

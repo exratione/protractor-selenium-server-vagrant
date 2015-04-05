@@ -12,7 +12,7 @@ default_attributes(
   },
   'n-and-nodejs' => {
     'n' => {
-      'version' => '1.2.1'
+      'version' => '1.2.13'
     },
     'nodejs' => {
       'version' => 'stable'
